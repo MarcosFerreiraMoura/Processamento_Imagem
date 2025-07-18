@@ -8,7 +8,7 @@ def escalaCinza(colored):
     for x in range(w):
         for y in range (h):
             pxl = colored.getpixel((x,y))
-            lum = (pxl[0] + pxl[1] + pxl[2])//3
+            lum = int(0.3 * pxl[0] + 0.59 *pxl[1] + 0.11 * pxl[2])
             img.putpixel((x,y), (lum, lum, lum))
 
     return img
@@ -22,5 +22,5 @@ if __name__ == "__main__":
 
     manga = Image.open(in_file("imageManga.jpg"))
     pbManga = escalaCinza(manga)
-    pbManga.save(out_file("pbManga.jpg"))
+    pbManga.save(out_file("pbManga2.jpg"))
 
